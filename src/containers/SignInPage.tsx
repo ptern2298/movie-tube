@@ -2,8 +2,30 @@ import React from 'react';
 import {useNavigate} from "react-router-dom";
 import logo from "../icons/MovieTube-logo.png";
 import '../style/SignIn.css';
+import {signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../utils/firebase-config";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+    email: string,
+    password: string,
+}
 
 function SignInPage() {
+
+    const { register, handleSubmit } = useForm<Inputs>();
+    const onSignIn: SubmitHandler<Inputs> = async (formData)=> {
+        try {
+            if(formData.password !== '' || formData.password != null) {
+                signInWithEmailAndPassword(auth, formData.email, formData.password);
+                navigate('/home');
+                console.log(`Account login attempt email: ${formData.email} password: ${formData.password}`);
+            }
+        } catch (error) {
+            console.error('Error signing in!');
+        }
+    }
+
     const navigate = useNavigate()
     return(
         <div className='signIn-container'>
@@ -19,9 +41,9 @@ function SignInPage() {
             <div className='signIn-content'>
                 <h1>Sign In</h1>
                 <div className='signIn-form'>
-                    <form>
-                        <input type='email' placeholder='Email'/>
-                        <input type='password' placeholder='Password'/>
+                    <form onSubmit={handleSubmit(onSignIn)}>
+                        <input {...register('email')} type='email' placeholder='Email'/>
+                        <input {...register('password')} type='password' placeholder='Password'/>
                         <button type='submit' className='signIn-submit-button'>Login</button>
                         <h5>Don't have account yet?
                             <span className='signIn-bold' onClick={() => {
