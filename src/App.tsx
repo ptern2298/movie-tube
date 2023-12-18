@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import MainPage from './containers/MainPage';
 import HomePage from './containers/HomePage';
 import SignUpPage from './containers/SignUpPage';
+import SignInPage from './containers/SignInPage';
 
 
 
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<MainPage/>} />
             <Route path="/home" element={<HomePage/>} />
             <Route path="/signup" element={<SignUpPage/>} />
+            <Route path="/signin" element={<SignInPage/>} />
         </Routes>
     </div>
   );
