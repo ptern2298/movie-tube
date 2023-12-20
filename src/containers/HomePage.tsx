@@ -1,8 +1,13 @@
 import React from 'react';
+import MoviesRowComponent from "../components/MoviesRowComponent";
 
 function HomePage() {
     return(
-        <h1>Home Page</h1>
+        <div>
+            <MoviesRowComponent/>
+            <MoviesRowComponent/>
+            <MoviesRowComponent/>
+        </div>
     );
 }
 
