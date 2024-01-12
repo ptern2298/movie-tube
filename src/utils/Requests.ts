@@ -12,3 +12,5 @@ const Requests = {
 }
 
 export default Requests;
+
+// url = https://image.tmdb.org/t/p/original/trending/all/week?api_key=f94a05868c16af9ebe710d5820af201a&language=en-US

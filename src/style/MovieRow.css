@@ -1,0 +1,30 @@
+.row {
+    color: white;
+    margin-left: 20px;
+}
+.movies-row {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.movie-poster {
+    max-height: 200px;
+    margin-right: 20px;
+    width: 100%;
+    transition: transform 400ms;
+}
+.movie-poster:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+.movie-large-poster {
+    max-height: 350px;
+    margin-right: 25px;
+    width: 100%;
+    transition: transform 400ms;
+}
+.movie-large-poster:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
