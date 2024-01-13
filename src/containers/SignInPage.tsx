@@ -18,7 +18,7 @@ function SignInPage() {
         try {
             if(formData.password !== '' || formData.password != null) {
                 signInWithEmailAndPassword(auth, formData.email, formData.password);
-                navigate('/home');
+                navigate('/');
                 console.log(`Account login attempt email: ${formData.email} password: ${formData.password}`);
             }
         } catch (error) {
