@@ -22,7 +22,6 @@ function MoviesRowComponent({ title, fetchURL, isLarge = false } : Props) {
         async function fetchMovieData() {
             const request = await axios.get(fetchURL);
             SetMovies(request.data.results);
-            console.log(request.data.results);
             return request;
         }
         fetchMovieData();
