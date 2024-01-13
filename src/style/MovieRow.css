@@ -4,14 +4,18 @@
 }
 .movies-row {
     display: flex;
-    overflow-y: hidden;
     overflow-x: scroll;
+    overflow-y: hidden;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% + 40px);
 }
 
 .movie-poster {
-    max-height: 200px;
+    max-height: 300px;
     margin-right: 20px;
-    width: 100%;
+    flex: 0 0 auto;
+    width: 15%;
     transition: transform 400ms;
 }
 .movie-poster:hover {
